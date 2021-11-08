@@ -1,0 +1,211 @@
+/*CSS do cabeçalho (fixo em todas as páginas) */
+@font-face {
+    font-family: 'fonte';
+    src: url('./fontes/russoone-regular-webfont.woff2') format('woff2'),
+         url('./fontes/russoone-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Oswald', sans-serif;
+}
+#navegacao{
+    background-color: rgb(62, 130, 255);
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    border-top: solid 8px rgb(77, 77, 255);
+    
+    margin: auto;
+}
+.container{
+    position:fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.nome{
+    padding-top: 16px;
+}
+.logo{
+    color: white;
+    padding-left: 30px;
+    font-size: 40px;
+    text-decoration: none;
+}
+.buscar{
+    padding-top: 30px;
+    position: relative;
+}
+.formbuscar{
+    width: 200px;
+    height: 30px;
+}
+/*search dentro do input*/
+.search{
+    position: absolute;
+    color: #666;
+    left: 175px;
+    font-size: 15px;
+    padding-top: 3px;
+}
+/* */
+input{
+    border-radius: 30px;
+    padding: 3px;
+    border: solid 1px black;
+    outline: none;
+}
+input[type=text]{
+    border: none;
+}
+.carrinho{
+    padding-top: 30px;
+    font-size: 20px;
+}
+.carrinho2{
+    text-decoration: none;
+    color: white;
+}
+.carrinho2:hover{
+    color: rgb(77, 77, 255);
+}
+#entrar{
+    padding-top: 30px;
+    padding-right: 30px;
+    font-size: 25px;
+}
+.entrar{
+    text-decoration: none;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+}
+.entrar:hover{
+    text-decoration: underline;
+}
+.logo:hover{
+    text-decoration: underline;
+}
+/*CSS do cabeçalho (fixo em todas as páginas) */
+
+.imagem{
+    width: 400px;
+    height: 300px;
+    cursor: zoom-in;
+}
+.img-menor{
+    width: 120px;
+    height: 100px;
+    border: solid 1px rgb(173, 173, 173);
+    margin-top: 30px;
+}
+.info_prod{
+    color: #666;
+}
+/*
+.zoom{
+    
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.zoom:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+*/
+.maior{
+    display: flex;
+    margin-top: 120px;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+.zoom{
+    padding-right: 100px;
+    margin-left: 50px;
+}
+.preço{
+    margin-right: 50px;
+    width: 450px;
+}
+.b1{
+    background-color: rgb(255, 117, 4);
+    text-decoration: none;
+    color: white;
+    width: 300px;
+    height: 60px;
+    border-radius: 30px;
+    border: none;
+    margin-bottom: 20px;
+}
+.comprar{
+    color: white;
+    text-decoration: none;
+}
+hr{
+    width: 300px;
+}
+.text-descricao{
+    color: #666;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    font-size: 15px;
+    text-align: justify;
+}
+.titulo-descricao{
+    color: #666;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.linha-desc{
+    width: 953px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+/*CSS do rodapé (fixo em todas as páginas) */
+#rodapé{
+    background-color: rgb(62, 130, 255);
+    bottom: 0;
+    width: 100%;
+    border-bottom: solid 8px rgb(77, 77, 255);
+}
+.part1{
+    display: flex;
+    justify-content: center;
+}
+.ajuda{
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+}
+.rod{
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+.redes{
+    padding-bottom: 25px;
+    justify-content: center;
+}
+.icon{
+    color: white;
+    font-size: 25px;
+    padding-right: 10px;
+}
+.caixa_pagamento{
+    padding-bottom: 40px;
+}
+.pagto{
+    color: white;
+    padding-right: 5px;
+}
+
