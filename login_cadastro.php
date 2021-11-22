@@ -32,44 +32,39 @@
     <div class="pai">
         <div class="cadastrado">
             <h3 class="h3">Já é cliente?</h3>
-            <br><form method="" action="">
-                <p><input type="email" placeholder="E-mail" class="form"></p>
-            </form></br>
-            <br><form  method="" action="">
-                <p><input type="password" placeholder="Senha" class="form"></p>
-            </form></br>
-            <br><a href="" class="senha">Esqueci minha senha</a></br> 
-            <div class="entrar_facebook">
-                <a href="" class="face"><i id="icon-face" class="fab fa-facebook"></i>Entrar com o Facebook</a>
-            </div>
-            <br><button type="submit" class="botao">Acessar Conta</button></br>
+            <br><form method="post" action="login.php">
+                <p><input type="email" placeholder="E-mail" class="form" name="email"></p>
+                <br>
+                <p><input type="password" placeholder="Senha" class="form" name="senha"></p>
+                <br>
+                <a href="" class="senha">Esqueci minha senha</a></br> 
+                <div class="entrar_facebook">
+                    <a href="" class="face"><i id="icon-face" class="fab fa-facebook"></i>Entrar com o Facebook</a>
+                </div>
+                <br><button type="submit" class="botao">Acessar Conta</button></br>
+            </form>
         </div>
         <div class="pai2">
             <div class="ñcadastrado">
                 <h3 class="h3">Crie uma conta</h3>
-                <br><form method="" action="">
-                    <p><input type="email" placeholder="E-mail" class="form"></p>
-                </form></br>
-                <br><form  method="" action="">
-                    <p><input type="password" placeholder="Senha" class="form"></p>
-                </form></br>
-                <br><form  method="" action="">
-                    <p><input type="number" placeholder="CPF" class="form"></p>
-                </form></br>
-                <br><form  method="" action="">
-                    <p><input type="text" placeholder="Nome" class="form"></p>
-                </form></br>
-                <p id="p">Informe sua data de nascimento:</p>
-                <br><form  method="" action="">
-                    <p><input type="date" placeholder="Data de nascimento" class="form"></p>
-                </form></br>
-                <br><form  method="" action="">
-                    <p><input type="number" placeholder="Telefone" class="form"></p>
-                </form></br>
-                <div>
-                    
-                </div>
+                <br>
+                <form method="post" action="Pagina_Inserir_Usuario.php">
+                    <p><input type="email" placeholder="E-mail" class="form" name="email"></p>
+                    <br><br>
+                    <p><input type="password" placeholder="Senha" class="form" name="senha"></p>
+                    <br><br>
+                    <p><input type="number" placeholder="CPF" class="form" name="cpf"></p>
+                    <br><br>
+                    <p><input type="text" placeholder="Nome" class="form" name="nome"></p>
+                    <br>
+                    <p id="p">Informe sua data de nascimento:</p>
+                    <br>
+                    <p><input type="date" placeholder="Data de nascimento" class="form" name="data_nascimento"></p> 
+                    <br><br>
+                    <p><input type="number" placeholder="Telefone" class="form" name="numero_telefone"></p>
+                    <br>
                 <br><button type="submit" class="botao">Criar Conta</button></br>
+                </form>
             </div>
         </div>
     </div>

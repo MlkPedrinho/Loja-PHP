@@ -66,7 +66,7 @@
             <br>
         <div id="botao">
             <button class="b1"><a href="" class="comprar">Comprar</a></button><br>
-            <button class="b1"><a href="Pagina_Carrinho.php" class="comprar">Adicionar ao carrinho <i class="fas fa-shopping-cart"></i></a></button>
+            <button class="b1"><a href="adicionar_carrinho.php?id_produto=<?=$id?>" class="comprar">Adicionar ao carrinho <i class="fas fa-shopping-cart"></i></a></button>
         </div>
             <hr>
             <p class="info_prod">Calcular Frete:</p>
