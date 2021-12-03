@@ -92,7 +92,11 @@ input{
 }
 /*CSS do cabeçalho (fixo em todas as páginas) */
 
-
+.nome-categoria{
+    color: #666;
+    margin-top: 120px;
+    margin-left: 25px;
+}
 .produtos{
     display: flex;
     justify-content: space-around;
@@ -106,7 +110,7 @@ input{
     text-decoration: underline;
 }
 .caixa-produto{
-    margin-top:150px;
+    margin-top: 25px;
     margin-bottom: 50px;
     width: 300px;
     height: 300px;

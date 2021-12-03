@@ -12,6 +12,9 @@
     $query2 = mysqli_query($conexao, $comando2);
     $retorno2 = mysqli_fetch_assoc($query2);
 
+    $preco = 0;
+    $i = 0;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,6 +47,8 @@
             </div>
         </div>
     </div>
+
+    <h2 class="nome-categoria"><?=$retorno2["nome_categoria"]?></h2>
 
     <div class="produtos">
         <?php while($retorno = mysqli_fetch_assoc($query)) : ?>
