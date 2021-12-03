@@ -97,6 +97,10 @@ input{
     margin-top: 120px;
     margin-left: 25px;
 }
+.icons-link{
+    color: #666;
+    padding-top: 10px;
+}
 .produtos{
     display: flex;
     justify-content: space-around;

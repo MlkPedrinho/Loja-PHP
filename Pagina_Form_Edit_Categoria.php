@@ -1,27 +1,21 @@
 <?php
-    require_once 'func_conect.php';
+     require_once 'func_conect.php';
 
-    $conexao = conexao();
+     $conexao = conexao();
 
-    $id_categoria = $_GET["id"];
+     $id = $_GET["id"];
 
-    $comando = "SELECT * FROM produtos where id_categoria = $id_categoria";
-    $query = mysqli_query($conexao, $comando);
-
-    $comando2 = "SELECT * FROM categoria where id = $id_categoria";
-    $query2 = mysqli_query($conexao, $comando2);
-    $retorno2 = mysqli_fetch_assoc($query2);
-
-    $preco = 0;
-    $i = 0;
+     $comando = "SELECT * FROM categoria where id = $id";
+     $query = mysqli_query($conexao, $comando);
+     $retorno = mysqli_fetch_assoc($query);
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Produtos Categoria <?=$retorno2["nome_categoria"]?> | PM Outlet</title>
-    <link rel="stylesheet" href="Pagina_Categoria.css">
+    <title>Cadastrar Produto | PM Outlet</title>
+    <link rel="stylesheet" href="Pagina_Form_Edit_Categoria.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="logo da loja.png">
@@ -48,22 +42,20 @@
         </div>
     </div>
 
-    <h2 class="nome-categoria"><?=$retorno2["nome_categoria"]?> | <a href="Pagina_Deletar_Categoria.php?id=<?=$retorno2["id"]?>" class="icons-link"><i class="fas fa-trash-alt"></i></a> | <a href="Pagina_Form_Edit_Categoria.php?id=<?=$retorno2["id"]?>" class="icons-link"><i class="fas fa-edit"></i></a></h2>
+    <div class="new-categoria">
+    <h2 class="form-prod-title">Formulário de Cadastro de Categoria</h2>
+        <center>
+            <form action="Pagina_Edit_Categoria.php?id=<?=$retorno["id"]?>" method="post">
 
-    <div class="produtos">
-        <?php while($retorno = mysqli_fetch_assoc($query)) : ?>
-            <div class="caixa-produto">
-            <br><a href="Pagina_Produto.php?id_produto=<?=$retorno["id_produto"]?>" ><img class="chut" src="<?=$retorno["img_produto"]?>" alt="<?=$retorno["nome_produto"]?>"></a></br>
-                <br><a href="Pagina_Produto.php?id_produto=<?=$retorno["id_produto"]?>" id="decoration"><?=$retorno["nome_produto"]?></a></br>
-                <p>R$ <?=$retorno["preco_produto"]?>,99</p>
-                <?php if($retorno["preco_produto"] < 150.00) : ?>
-                    <p class="frete">FRETE GRÁTIS</p>
-                <?php endif; ?>
-                
-            </div>
-        <?php endwhile; ?>
+                <div class="nome2">
+                    <Label for="nome-categoria" class="name-form">Nome da Categoria:</label>
+                    <input type="text" name="nome-categoria" id="nome-categoria" class="campo-form" value="<?=$retorno["nome_categoria"]?>">
+                </div>
+
+                <input type="submit" class="botao-cadastro" value="Cadastrar">
+            </form>
+        </center>
     </div>
-
 
     <div id="rodapé">
         <div class="part1">
@@ -94,6 +86,7 @@
 
         </div>
     </div>
+
     
 </body>
 </html>
