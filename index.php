@@ -4,7 +4,10 @@
     $conexao = conexao();
 
     $comando = "SELECT * from produtos";
+    $comando2 = "SELECT * FROM categoria";
+    
     $query = mysqli_query($conexao, $comando);
+    $query2 = mysqli_query($conexao, $comando2);
 
     $preco = 0;
     $i = 0;
@@ -43,20 +46,12 @@
             </div>
         </div>
         <div class="maior">
-            <?php
-                $modalidades = array();
-                $modalidades[0] = 'Esportes';
-                $modalidades[1] = 'Homens';
-                $modalidades[2] = 'Mulheres';
-                $modalidades[3] = 'Crianças';
-                $modalidades[4] = 'Futebol';
-                $modalidades[5] = 'Calçados';
-                $modalidades[6] = 'Roupas';
-                $modalidades[7] = 'Acessórios';
-            ?>
-            <?php for ($i=0; $i < count($modalidades); $i++) :?>
-                <div><?=$modalidades[$i]?></div>
-            <?php endfor; ?>
+            
+                <?php while($retorno2 = mysqli_fetch_assoc($query2)) : ?>
+                    <div>
+                        <a href = "Pagina_Categoria.php?id=<?=$retorno2["id"]?>" class="nome-cat"> <?=$retorno2["nome_categoria"]?></a>
+                    </div>
+                <?php endwhile;?>
         </div>
     </div>
 

@@ -1,9 +1,22 @@
+<?php
+    require_once 'func_conect.php';
+
+    $conexao = conexao();
+
+    $id = $_GET["id_produto"];
+
+    $comando  = "SELECT * FROM produtos WHERE id_produto = '$id'";
+    $query = mysqli_query($conexao, $comando);
+    $retorno = mysqli_fetch_assoc($query);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastrar Produto | PM Outlet</title>
-    <link rel="stylesheet" href="Pagina_Form_Produto.css">
+    <title>Alterar Produtos Cadastrados | PM Outlet</title>
+    <link rel="stylesheet" href="Pagina_Alterar_Produto.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="logo da loja.png">
@@ -33,41 +46,36 @@
     <div class="formulario-produto">
         <h2 class="form-prod-title">Formulário de Cadastro de Produto</h2>
         <center>
-            <form method="POST" action="Pagina_Cadastro_Produto.php" enctype="multipart/form-data">
+            <form method="POST" action="Pagina_Update_Produto.php?id_produto=<?=$id?>" enctype="multipart/form-data">
                 <div class="nome2">
                     <label for="img" class="name-form">Faça o Upload da imagem de um produto:</label><br>
-                    <input type="file" name="imagem-produto" class="campo-form" required="" id="img"><br>
+                    <input type="file" name="imagem-produto" class="campo-form" id="img"><br>
                 </div>
                 
                 <div class="nome2">
                     <label for="nome-prod" class="name-form">Nome:</label><br>
-                    <input type="text" name="nome-produto" class="campo-form" required="" id="nome-prod" placeholder="Ex. Produto"><br>
+                    <input type="text" name="nome-produto" class="campo-form" required="" id="nome-prod" value="<?=$retorno["nome_produto"]?>"><br>
                 </div>
 
                 <div class="nome2">
                     <label for="preco-prod" class="name-form">Preço:</label><br>
-                    <input type="number" name="preco-produto" id="preco-prod" class="campo-form" placeholder="Ex. 999.99"><br>
+                    <input type="number" name="preco-produto" id="preco-prod" class="campo-form" value="<?=$retorno["preco_produto"]?>"><br>
                 </div>
                 
                 <div class="nome2">
                     <label for="desc-prod" class="name-form">Descrição:</label><br>
-                    <input type="text" name="descricao-produto" id="desc-prod" class="campo-form" placeholder="Ex. O Produto é bom."><br>
+                    <input type="text" name="descricao-produto" id="desc-prod" class="campo-form" value="<?=$retorno["descricao_produto"]?>"><br>
                 </div>
 
                 <div class="nome2">
                     <label for="id-cat" class="name-form">ID da Categoria:</label><br>
-                    <input type="number" name="id-categoria" id="id-cat" class="campo-form" placeholder="Ex. 2"><br>
+                    <input type="number" name="id-categoria" id="id-cat" class="campo-form" value="<?=$retorno["id_categoria"]?>"><br>
                 </div>
 
                 <input type="submit" class="botao-cadastro" value="Cadastrar">
 
             </form>
         </center>
-    </div>
-
-    <div class="link-form-prod">
-        <h2 class="title-form">Deseja Editar Ou Excluir Um Produto?</h2>
-        <a href="Pagina_Edit_Produto.php"><input type="submit" class="botao-form" value="Ir Para Página De Edição De Produto"></a>
     </div>
 
     <div id="rodapé">
@@ -99,7 +107,7 @@
 
         </div>
     </div>
-
+    
     
 </body>
 </html>

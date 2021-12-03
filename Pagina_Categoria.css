@@ -1,3 +1,12 @@
+/*CSS do cabeçalho (fixo em todas as páginas) */
+@font-face {
+    font-family: 'fonte';
+    src: url('./fontes/russoone-regular-webfont.woff2') format('woff2'),
+         url('./fontes/russoone-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 *{
     margin:0;
     padding: 0;
@@ -12,6 +21,7 @@ body{
     justify-content: space-between;
     height: 100px;
     border-top: solid 8px rgb(77, 77, 255);
+    
     margin: auto;
 }
 .container{
@@ -80,19 +90,13 @@ input{
 .logo:hover{
     text-decoration: underline;
 }
+/*CSS do cabeçalho (fixo em todas as páginas) */
 
-.maior{
-    display:flex;
-    background-color: rgb(173, 173, 173);
+
+.produtos{
+    display: flex;
     justify-content: space-around;
-    color: white;
-}
-.nome-cat{
-    color: white;
-    text-decoration: none; 
-}
-.modalidades{
-    text-decoration: none;
+    flex-wrap: wrap;
 }
 #decoration{
     text-decoration: none;
@@ -101,16 +105,7 @@ input{
 #decoration:hover{
     text-decoration: underline;
 }
-.produtos{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-.chut{
-    width: 130px;
-    height: 130px;
-}
-.ft1{
+.caixa-produto{
     margin-top:150px;
     margin-bottom: 50px;
     width: 300px;
@@ -119,34 +114,20 @@ input{
     text-align: center;
     font-size: 14px;
 }
-.link-form-prod{
-    margin-bottom: 50px;
-    margin-left: 25px;
-    text-align: center;
+.chut{
+    width: 130px;
+    height: 130px;
 }
-.title-form{
-    color: #666;
-    margin-bottom: 10px;
-}
-.botao-form{
-    color: white;
-    background-color: rgb(255, 117, 4);
-    padding: 5px;
-    height: 30px;
-    width: 300px;
-    cursor: pointer;
-    border: none;
-}
-.botao-form:hover{
-    color: orange;
-}
-.ou{
-    color: #666;
+.frete{
+    color: rgb(20, 230, 20);
 }
 
 
+/*CSS do rodapé (fixo em todas as páginas) */
 #rodapé{
     background-color: rgb(62, 130, 255);
+    bottom: 0;
+    width: 100%;
     border-bottom: solid 8px rgb(77, 77, 255);
 }
 .part1{
@@ -178,7 +159,3 @@ input{
     color: white;
     padding-right: 5px;
 }
-.frete{
-    color: rgb(20, 230, 20);
-}
-
